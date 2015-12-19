@@ -1,0 +1,446 @@
+* {text-decoration: none;}
+
+body, td, li {font: 12px/16px Arial, Helvetica, sans-serif;}
+
+body, img, div, ul, ol, li, form, iframe {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 12px;
+	color: black;
+	background-color: white;
+}
+div {border: 0 solid #EEC;}
+
+img {vertical-align: middle;}
+
+a:link {color: #600;}
+a:visited {color: #600;}
+a:hover {color: blue;}
+a:active {color: red;}
+
+h1 {
+	margin: 0 40px 25px 305px;
+	font-size: 20px;
+	text-indent: -33px;
+	line-height: 36px;
+}
+h2 {
+	margin: 25px 50px 22px 60px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 26px;
+}
+h3 {
+	margin: 22px 50px 20px 60px;
+	text-align: center;
+	font-size: 13px;
+	font-style: italic;
+	line-height: 20px;
+}
+h4 {
+	margin: 6px 20px 0 0;
+	text-align: left;
+	font-size: 11px;
+	line-height: 16px;
+	color: red;
+}
+h5 {
+	margin: 0 20px 0;
+	text-align: center;
+	font-size: 11px;
+	color: red;
+}
+iframe {
+	width: 120px;
+	height: 64px;
+}
+p {margin: 18px 30px 3px 40px;}
+
+hr {
+	clear: both;
+	margin: 15px 0 2px 55px;
+	padding: 0;
+	border: 0;
+	height: 1px;
+	width: 100px;
+	text-align: left;
+	color: #999;
+	background-color: #999;
+}
+ol {
+	margin: 6px 35px 4px 85px;
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+p, ol {
+	text-indent: 0;
+	line-height: 16px;
+	text-align: justify;
+}
+sup {
+	font-size: 9px;
+	vertical-align: 3px;
+	line-height: 12px;
+}
+input {
+	vertical-align: middle;
+	margin-top: 3px;
+}
+li {margin: 6px 0 0;}
+
+#container {
+	position: relative;
+	width: 99%;
+	height: 100%;
+}
+#haut {
+	height: 64px;
+	width: 101%;
+}
+#haut img {margin: 7px 2px 1px 9px;}
+#haut img:hover {
+	margin: 6px 1px 0 8px;
+	border: 1px solid #600;
+}
+
+#topback {
+	position: absolute;
+	top: 30px;
+	left: 280px;
+	z-index: 5;
+}
+#topmenu {
+	position: absolute;
+	top: 0;
+	left: 231px;
+	border-width: 0 0 2px;
+	z-index: 10;
+}
+#topmenu td, #random td {
+	height: 64px;
+	font-size: 14px;
+	line-height: 15px;
+	text-align: center;
+}
+#topmenu td {padding: 0 12px;}
+#random a:link {color: #F77;}
+#random a:visited {color: #FB7;}
+#random a:hover {color: blue;}
+#random a:active {color: red;}
+
+.dropmenu {
+	position: absolute;
+	top: 64px;
+	left: 0;
+	border-width: 0 2px 2px;
+	line-height:18px;
+	visibility: hidden;
+	z-index: 100;
+}
+.dropmenu ul {
+	list-style-type: none;
+	margin: 0;
+}
+.dropmenu li {
+	text-align: left;
+	margin: 0 8px 3px;
+}
+/* IE Mac ignores the asterisque following the antislash \*//*/
+#dropmenu1 {width: 260px;}
+#dropmenu2 {width: 240px;}
+#dropmenu3 {width: 240px;}
+#dropmenu4 {width: 245px;}
+#dropmenu5 {width: 135px;}
+#dropmenu6 {width: 75px;}
+/**/
+
+#leftgap {
+	float: left;
+	width: 40px;
+	height: 20px;
+	border-width: 2px 0 0;
+}
+#leftbox {
+	float: left;
+	width: 192px;
+	margin: 0 40px 20px 0;
+	overflow: hidden;
+}
+#leftbox div {
+	text-align: center;
+	padding: 8px;
+	border-width: 2px;
+	border-top: 0;
+}
+#leftbox p {margin: 0 0 6px;}
+
+#leftbox ul {
+	list-style-type: none;
+	color: red;
+	text-align: center;
+	margin-bottom: 2px;
+}
+#leftbox table {width: 172px;}
+
+#leftbox td {
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #CCC;
+}
+#search {
+	color: #C93;
+	font-size: 11px;
+}
+#find {
+	width: 134px;
+	height: 15px;
+	font-size: 11px;
+	margin-top: 3px;
+	border: 1px solid #C93;
+	border-right: 0;
+	background-color: #FFC;
+}
+#headline {
+	height: 30px;
+	border-width: 2px 0 0;
+}
+#mainlist {margin: 0 0 0 260px;}
+
+#mainlist ul {
+	list-style-type: square;
+	list-style-position: inside;
+}
+#mainlist ul li {
+	margin: 7px 0 0;
+	padding: 0 25px;
+	text-indent: -25px;
+	line-height: 17px;
+}
+#mainlist p {
+	margin: 10px 0 0;
+	color: red;
+	font-size: 11px;
+}
+#fin {
+	clear: both;
+	margin: 20px auto 5px auto;
+	padding-bottom: 1px;
+	width: 101%;
+	border-width: 1px 0;
+}
+#fin table {width: 100%;}
+
+#fin td {
+	text-align: center;
+	font-size: 10px;
+	line-height: 11px;
+	font-weight: bold;
+	color: #CCC;
+}
+.arrow {width: 60px;}
+
+#droits {
+	margin: 0 40px 6px;
+	font-size: 10px;
+}
+#tablebox {
+	position: absolute;
+	top: 78px;
+	left: 245px;
+	margin-right: 30px;
+	border-width: 2px;
+	line-height:18px;
+	visibility: hidden;
+	z-index: 80;
+}
+#tablebox p {
+	margin: 5px 20px 5px 20px;
+}
+#tablebox ul {
+	list-style-position: outside;
+	margin: 0;
+}
+#tablebox ol {
+	list-style-type: upper-roman;
+	list-style-position: outside;
+	margin: 0;
+}
+#tablebox li {
+	color: red;
+	margin: 5px 20px 5px 35px;
+}
+#haut, #topmenu, .dropmenu, #leftbox div, #fin, #tablebox, #random, iframe {
+	background-color: #FFC;
+	background-image: url(/linesbg.png);
+}
+#sommaire {
+	margin: 30px 60px 25px 272px;
+	color: red;
+}
+#bookbox {
+	clear: left;
+	float: left;
+	margin: 0 44px 20px 84px;
+}
+.note {
+	border-width: 1px;
+	border-color: #AAA;
+	padding: 5px 0 10px 10px;
+	margin: 0 30px 0 40px;
+	clear: both;
+}	
+.latfr {
+	margin: 15px 20px 0 30px;
+	clear: both;
+}	
+.latfr h3 {
+	margin: 0 20px 12px;
+	padding-top: 15px;
+	padding-right: 6%;
+}
+.fr, .fr1 {
+	float: right;
+	width: 52%;
+	margin: 9px 0;
+}
+.lat, .lat1 {
+	float: left;
+	width: 46%;
+	margin: 9px 0;
+}
+.latfr h2, .fr1 h3, .lat1 h3 {
+	margin: 15px 10px 0;
+}
+.fr h3, .lat h3 {
+	padding: 0;
+	margin: 15px 10px 0 40px;
+	text-indent: -30px;
+}
+.fr div, .fr1 div, .lat div, .note div {
+	float: left;
+	margin: 0;
+	color: red;
+}
+.lat1 div {
+	float: left;
+	margin: 0;
+	font-size: 36px;
+	line-height: 32px;
+}
+.latfr p {margin: 0 10px;}
+.fr p, .lat p, .note p {text-indent: 15px;}
+.latfr hr {margin: 4px 8px;}
+
+.note p {margin: 6px 30px 3px 20px;}
+
+.notop {margin-top: 0;}
+
+.bottom {margin-bottom: 8px;}
+
+.subsect {
+	margin: 6px 30px 3px 40px;
+	text-indent: 15px;
+}
+.lettrine {
+	float: left;
+	font-size: 32px;
+	line-height: 28px;
+	margin: 0;
+	padding-left: 35px;
+}
+.indent {margin: 6px 60px 4px 70px;}
+
+.signature {
+	clear: both;
+	margin: 12px 105px 18px 70px;
+	text-align: right;
+}
+.notes {
+	margin: 4px 60px 2px 90px;
+	line-height: 14px;
+}
+.subnote {
+	text-indent: 15px;
+	margin: 2px 60px 2px 90px;
+	line-height: 14px;
+}
+.noteref {
+	font-size: 10px;
+	vertical-align: 2px;
+	line-height: 12px;
+}
+.notenum {
+	float: left;
+	margin: 0;
+	width: 85px;
+	height: 14px;
+	font-size: 10px;
+	line-height: 12px;
+	vertical-align: 2px;
+	text-align: right;
+}
+.remark {
+	font-size: 11px;
+	line-height: 14px;
+}
+.obs {margin: 0 50px;}
+.obs h4 {
+	clear: both;
+	margin: 0;
+	padding: 35px 0 10px; 
+	text-align: center;
+	font-size: 12px;
+	line-height: 16px;
+	color: black;
+}
+.dessin {
+	float:right;
+	text-align: center;
+	width: 405px;
+	margin: 0 30px 5px 20px;
+}
+.dessin2 {
+	padding: 10px 15px;
+	clear: both;
+	text-align: center;
+}
+.dessin2 div {width: 50%;}
+.dessin p, .dessin2 p {
+	text-align: center;
+	text-indent: 0;
+	line-height: 14px;
+}
+.dessin p {	margin: 20px 50px;}
+.dessin2 p {margin: 20px auto;}
+.wide-l, .narrow-l {float: left;}
+.wide-r, .narrow-r {float: right;}
+.wide-l, .wide-r {	min-width: 430px;}
+.narrow-l, .narrow-r {min-width: 320px;}
+.wide-l p, .wide-r p {width: 370px;}
+.narrow-l p, .narrow-r p {width: 260px;}
+.dessin-pad {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0 0 0 120px;
+}
+.chapitre {
+	color: red;
+	list-style-type: square;
+	padding-bottom: 8px;
+	margin-left: 280px;
+}
+.chapitre li {
+	margin-top: 2px;
+	margin-left: 50px;
+	text-align: left;
+}
+.times, .notes, .subnote, .notenum, .note div, .lat1 div, .dessin p, .dessin2 p {
+	font-family: "Times New Roman", Times, serif;
+}
+.smaller {font-size: 11px;}
+.center {text-align: center;}
+.red {color: red;}

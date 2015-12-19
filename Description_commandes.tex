@@ -1,0 +1,36 @@
+\documentclass[%
+fontsize=10%
+,a5paper%
+,DIV=15%
+]{scrartcl}
+%scrartcl
+
+
+
+\usepackage{gredocument}
+
+
+\title{\centrer{Voici le titre}}%Définit le titre de document
+\author{Et l'Auteur}
+\date{et la date}
+
+\makeindex %Générer un index
+
+\begin{document}%debut document%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle% afficher le titre,auteur et date
+\newpage
+
+\redlines % lignes rouges
+            %\gresetlinecolor{153}{0}{0}
+            \definecolor{gregoriocolor}{rgb}{% définit la couleur précise des lignes des partitions
+                .6,0,0%
+            }
+
+\begin{center}
+\greseparator{2}{10} %insère une ligne {le style (de 1 à 5)}{taille}
+\end{center}
+
+\titre[espace=8,table=idem,matiere=non]{Et le deuxième titre} %insère un titre [espace=espace-avant-titre,table=ou idem ou non ou (titre a afficher dans l'index),matiere=ou idem ou non ou (titre a afficher dans la table des matières) 
+\cantus{Alleluia}{Alleluia}{3}{4}
+
+\end{document}

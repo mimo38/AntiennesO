@@ -1,0 +1,49 @@
+
+
+%\newkeycommand{\titre}[espace=8,table=idem][][1]{%
+%	\vspace{1em plus 6\baselineskip}%
+%
+%	\index{#1}%
+%	\subsection*{#1}
+%	\vspace{1ex plus .7ex minus .2ex}
+%}
+
+\newcommand{\centrer}[1]{
+    \vspace*{\stretch{1}}
+#1
+    \vspace*{\stretch{1}}
+}
+
+
+
+%hiérarchisation sans nombre
+\newcommand{\titrea}[1]{
+\centering{\Huge{\textbf{#1}}}
+
+\addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\titreb}[1]{
+%\begin{center}
+\section*{#1}
+%\end{center}
+\addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\titrec}[1]{
+
+\subsection*{#1}
+
+\addcontentsline{toc}{subsection}{#1}
+}
+\newcommand{\titred}[1]{
+%\begin{center}
+\subsubsection*{#1}
+%\end{center}
+\addcontentsline{toc}{subsubsection}{#1}
+}
+
+%\section{Test de gros titre}
+%\subsection{subsection}
+%\subsubsection{sousous}
+%\paragraph{para}

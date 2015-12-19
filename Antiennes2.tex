@@ -1,0 +1,41 @@
+\documentclass[%
+fontsize=10%
+,a5paper%
+,DIV=15%
+]{scrartcl}
+%scrartcl
+
+
+
+\usepackage{gredocument}
+
+
+\title{Grandes Antiennes de l'Avent}
+\author{ou Antiennes O}
+\date{du 17 au 23 décembre}
+
+\makeindex
+
+\begin{document}
+\maketitle
+\redlines
+            %\gresetlinecolor{153}{0}{0}
+            \definecolor{gregoriocolor}{rgb}{%
+                .6,0,0%
+            }
+
+
+\greseparator{2}{10}
+\begin{center}
+\subsection*{\centering{Test de titre}}
+\end{center}
+Et maintenant le texte
+\titre[espace=5,table=LaTable]{Et le deuxième titre}
+Et le deuxième texte
+\addcontentsline{toc}{chapter}{chapitre}
+\addcontentsline{toc}{section}{section1}
+\addcontentsline{toc}{subsection}{subsection1}
+\addcontentsline{toc}{subsubsection}{sous-soussection}
+
+\tableofcontents
+\end{document}

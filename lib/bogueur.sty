@@ -1,0 +1,146 @@
+\ProvidesPackage{gredoc}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% Réglages et commandes pour n'importe quel document %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%% Vous pourriez vouloir modifier ces réglages. %%%%%%%%%%%%%%%%%
+%%% Élasticité des espaces : mettez une valeur inférieure à 10000. Plus les
+%%% valeurs sont élevées, plus LaTeX aura de facilité à éviter les
+%%% "débordements", mais moins la mise en page sera rigoureuse.
+%%% Avant de modifier ces paramètres, assurez-vous qu'il n'y a pas moyen de
+%%% faire autrement (gestion des césures, etc.).
+%%% Paramètres recommandés :
+%%% en A5 (police 11pt, DIV auto), tolerance à 1000 et pretolerance à 300 ;
+%%% en A6 (police 9pt, DIV=11), tolerance à 5000 et pretolerance à 1700.
+\tolerance=1000 \pretolerance=300
+%%% Prévention des veuves et orphelines. Vous pouvez augmenter ces paramètres,
+%%% mais attendez-vous à des aberrations.
+%\usepackage[defaultlines=2,all]{nowidow}
+\usepackage{nowidow}
+\flushbottom
+\widowpenalties 3 3000 0 0
+\clubpenalties 3 9999 50 0
+%%% Taille (proportionnelle) de la première colonne dans les textes en
+%%% parallèle, et taille de l'espace inter-colonnes.
+\def\ratio{.48}
+\def\sep{.05\textwidth}
+%%% Taille des partitions grégoriennes.
+\newcounter{facteur}\setcounter{facteur}{12}
+
+
+%%%%%%%%%%%%%%%%%%%%%% Dépendances et réglages généraux. %%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Suppléments propres à LuaTeX.
+%\RequirePackage{luatextra}
+%%% Paramètres de langue.
+\RequirePackage{polyglossia}\setmainlanguage{french}\setotherlanguage{latin}
+\selectbackgroundlanguage{french}
+\RequirePackage{enumitem}\setlist{nosep}\setlist[itemize]{label=−}
+\def\ier{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}er}}}
+\def\iere{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}re}}}
+\def\ieme{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}e}}}
+\def\iers{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}ers}}}
+\def\ieres{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}res}}}
+\def\iemes{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}es}}}
+
+%%% Une question qui revient souvent : comment personnaliser les marges ?
+%%% Réponse courte : laissez faire LaTeX, il sait ce qu'il fait !
+%%% Bonne réponse : augmentez ou diminuez le paramètre DIV au tout début du
+%%%     document maître.
+%%% Mauvaise réponse : si vraiment vous y tenez, décommentez les lignes qui
+%%%     suivent, et adaptez-les à vos exigences.
+% \usepackage[%
+% 		includeheadfoot%
+% 		,left=30mm%
+% 		,right=30mm%
+% 		,top=10mm%
+% 		,bottom=20mm%
+% ]{geometry}
+
+%%% Utiles pour les commandes personnalisées.
+\RequirePackage{multicol,paracol}\setcounter{collectmore}{-1}
+\setlength{\columnsep}{\sep}\columnratio{\ratio}\swapcolumninevenpages
+\RequirePackage{needspace}
+\RequirePackage{graphicx}
+\RequirePackage[table]{xcolor}
+\RequirePackage{keycommand,ifthen,calc}
+\RequirePackage{lettrine}
+
+%%% KOMA - Options de titres, de numéros de pages...
+\RequirePackage{scrpage2,titlesec}
+\pagestyle{scrheadings}
+\setcounter{secnumdepth}{0}
+\renewcommand*{\partformat}{}
+\renewcommand*{\chapterformat}{}
+\renewcommand*{\othersectionlevelsformat}[3]{}
+\renewcommand*{\partmarkformat}{}
+\renewcommand*{\chaptermarkformat}{}
+\addtokomafont{chapter}{\centering}
+\renewcommand*{\titlepagestyle}{empty}
+\renewcommand*{\partpagestyle}{empty}
+\renewcommand*{\chapterpagestyle}{empty}
+\renewcommand*{\indexpagestyle}{empty}
+\clearscrheadfoot\ohead[\pagemark]{\pagemark}\ihead{\headmark}
+\titlespacing{\section}{0pt}{%
+	1\baselineskip plus .2\baselineskip minus .8\baselineskip}{%
+	.5\baselineskip plus .4\baselineskip minus .3\baselineskip}
+\titlespacing{\subsection}{0pt}{%
+	1\baselineskip plus .5\baselineskip minus .8\baselineskip}{%
+	.5\baselineskip plus .8\baselineskip minus .3\baselineskip}
+\newcommand{\sectionbreak}{\vspace{0\baselineskip plus 3\baselineskip}\pagebreak[3]\needspace{8\baselineskip}}
+\newcommand{\subsectionbreak}{\vspace{0\baselineskip plus 2\baselineskip}\pagebreak[3]\needspace{3\baselineskip}}
+\newcommand{\paginarectavacua}{\ifthispageodd{\thispagestyle{plain}}{}}
+
+\RequirePackage{imakeidx}
+
+%%% GregorioTeX.
+\RequirePackage[autocompile]{gregoriotex}
+\RequirePackage{gregoriosyms}
+\setgrefactor{\value{facteur}}
+
+%%% Polices de caractères.
+\RequirePackage{libertine,lettrine}
+\setmainfont[%
+	Numbers = {Proportional,OldStyle}%     Style des nombres
+	, WordSpace = {1.5,1.5,3}%             Espacement entre les mots
+	]{%
+	Linux Libertine O%                     Police par défaut
+}
+%\RequirePackage[%
+%	activate={true,nocompatibility}%
+%	,final%
+%	,tracking=true%
+%	,factor=1100%
+%	,stretch=50%
+%	,shrink=30%
+%	]{%
+%	microtype%
+%}
+%\SetTracking{encoding={*}, shape=sc}{0}
+%\newlength{\tailletemp} \newlength{\taillepolice}
+%\setlength{\tailletemp}{\grefactor pt} \setlength{\taillepolice}{1\tailletemp}
+%\newfontfamily\lettrines[Scale=1.3]{Lettrines Pro 800}
+%\def\gretextformat#1{{\fontsize{\taillepolice}{\taillepolice}\selectfont #1}}
+%\def\greinitialformat#1{{\lettrines #1}}
+%\font\lettrinetexte=l800.ttf at 4\baselineskip
+%\renewcommand{\LettrineFont}{\lettrinetexte}
+%\setlength{\DefaultFindent}{-2em}
+%\let\oldlettrine\lettrine
+%\def\lettrine#1#2{\vspace{-1.5\baselineskip}\oldlettrine{#1}{#2}}
+
+%%% PDF.
+\RequirePackage[pdftex=true,%
+    hypertexnames=false,%
+    pdfborder=0,%
+    hyperindex=true,%
+    pdfpagelabels=true,%
+    unicode%
+    ]{hyperref}
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}{%
+    \phantomsection
+    \oldaddcontentsline%
+}

@@ -1,0 +1,188 @@
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+%\usepackage[frenchb]{babel}
+\usepackage{adaptateur}
+
+\usepackage{paracol}
+\usepackage{libertine}
+\usepackage[autocompile]{gregoriotex}
+\usepackage{lyluatex}
+\RequirePackage{gregoriotex,gregoriosyms}
+\grechangestaffsize{14}
+
+
+
+%%% Élasticité des espaces : mettez une valeur inférieure à 10000. Plus les
+%%% valeurs sont élevées, plus LaTeX aura de facilité à éviter les
+%%% "débordements", mais moins la mise en page sera rigoureuse.
+%%% Avant de modifier ces paramètres, assurez-vous qu'il n'y a pas moyen de
+%%% faire autrement (gestion des césures, etc.).
+%%% Paramètres recommandés :
+%%% en A5 (police 11pt, DIV auto), tolerance à 1000 et pretolerance à 300 ;
+%%% en A6 (police 9pt, DIV=11), tolerance à 5000 et pretolerance à 1700.
+\tolerance=5000 \pretolerance=1900
+%%% Paramètres de langue.
+\RequirePackage{polyglossia}\setmainlanguage{french}\setotherlanguage{latin}
+\selectbackgroundlanguage{french}
+\RequirePackage{enumitem}\setlist{nosep}\setlist[itemize]{label=−}
+\def\ier{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}er}}}
+\def\iere{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}re}}}
+\def\ieme{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}e}}}
+\def\iers{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}ers}}}
+\def\ieres{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}res}}}
+\def\iemes{\raisebox{.5ex}{{\footnotesize \hspace{.1ex}es}}}
+
+
+
+%%% Couleur rouge pour les rubriques.
+
+\newcommand{\rubrica}[2][french]{{\small%
+	\vspace{0\baselineskip plus 1\baselineskip}%
+	\pagebreak[2]%
+	\begin{#1}\noindent\emph{\rubrum #2}\par\end{#1}
+	\vspace{0\baselineskip plus .5\baselineskip}%
+}}
+
+%%%insère une page blanche (saut d'une page entière ) 
+\newcommand{\pageblanche}{
+\newpage
+\thispagestyle{empty}
+\strut
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}}
+
+%%%
+\newcommand{\chapitre}[1][0]{
+\newcounter{chapitr}
+\newcounter{chapitrbis}
+\setcounter{chapitr}{(\thepage+#1)/2}
+\setcounter{chapitrbis}{(\thepage+#1+1)/2}
+
+\ifthenelse{\value{chapitr} = \value{chapitrbis}}
+		{\newpage \thispagestyle{empty}}
+		{\pageblanche \thispagestyle{empty}}
+		
+}
+%%%%%%
+%Fait passer à la quatrième de couverture(\fin)
+\newcommand{\fin}[1][0]{
+\newcounter{pair}
+\newcounter{pairbis}
+\newcounter{pairter}
+\newcounter{pairquat}
+
+\setcounter{pair}{(\thepage+#1)/4}
+\setcounter{pairbis}{(\thepage+#1+1)/4}
+\setcounter{pairter}{(\thepage+#1+2)/4}
+\setcounter{pairquat}{(\thepage+#1+3)/4}
+
+\ifthenelse
+	{\value{pair} = \value{pairbis}} %if
+		{\ifthenelse
+			{\value{pair} = \value{pairter}} 
+			{\ifthenelse
+				{\value{pair} = \value{pairquat}}
+				{\pageblanche  \pageblanche \pageblanche \thispagestyle{empty}04}
+				{\pageblanche  \pageblanche \thispagestyle{empty}03}
+			}
+			{\pageblanche  \thispagestyle{empty}02}
+		}
+		{\newpage \thispagestyle{empty}01}	
+		
+		
+    }
+    
+		
+%%% Pour les textes bilingues.
+\newcommand{\versio}[3][1]{%
+	{\parindent=0pt
+	\begin{paracol}{2}
+	\ensurevspace{#1\baselineskip}
+	\switchcolumn\switchcolumn*
+ 	\begin{latin} #2\looseness=-1 \end{latin}
+	\switchcolumn
+	\begin{french} #3\looseness=-1 \end{french}
+	\end{paracol}%
+	}%
+}
+
+%\newcommand{\versio}[2]{{%
+%%\font\diurnale = Liturgie.ttf
+%\begin{parcolumns}[distance=\intercol,colwidths={1=.46\linewidth},nofirstindent]{2}
+%\colchunk{\sloppy%
+%#1\par}
+%\colchunk{\sloppy%
+%\small #2\par}
+%\end{parcolumns}\par\fussy
+
+%%% Symboles.
+% Verset et répons. Si vous ne savez pas saisir directement ℣. ou ℟., utilisez
+% respectivement \vb. ou \rb. ; si vous ne savez pas saisir †, utilisez \+ ;
+% pour les astérisques, utilisez \*
+\catcode`\℣=\active \def ℣#1{%
+	{\rubrum \Vbar}%
+	\mbox{\hspace{-.2ex}{\rubrum#1}}%
+}
+\def\vb#1{℣{#1}}
+
+\catcode`\℟=\active \def ℟#1{%
+	{\rubrum \Rbar}%
+	\mbox{\hspace{-.2ex}{\rubrum#1}}%
+}
+\def\rb#1{℟{#1}}
+
+% Flexe et mètre dans les psaumes.
+\def\+{†}
+% \renewcommand{\*}{\raisebox{.5ex}[0pt][0pt]{%
+% 	\rubrum\includegraphics[width=.9ex]{Asterisque}}%
+% }
+\renewcommand{\*}{{\rubrum *}}
+\def\gredagger{†}
+%\let\grestar\*
+%\let\greheightstar\*
+% Croix
+\catcode`\✠=\active \def ✠{\raisebox{-.1ex}[0pt][0pt]{%
+	\rubrum\includegraphics[height=1.6ex]{Crux}}}
+\def\crux{✠}
+
+%%% Réglages pour les lignes de portée.
+%\gresetlinecolor{153}{0}{0}
+\grechangestafflinethickness{15}
+%\grechangedim{\grespacelinestext}{3.3ex}
+%\grechangedim{\greabovelinestextraise}{0ex}
+
+
+%%% Insertion d'une partition
+\newcommand{\cantus}[4]{%
+	\setfirstannotation{%
+		\raisebox{.1ex}[.1ex][0pt]{%
+			\hspace*{-1ex}\rubrum\scriptsize \textsc{#3}%
+		}%
+	}%
+	\setsecondannotation{%
+		{\hspace*{-1ex}\rubrum\scriptsize \textsc{#4}}%
+	}%
+	{\widowpenalties 3 0 0 0 \clubpenalties 3 0 0 0%\nowidow[1]\noclub[1]
+		\includescore{gabc/#1/#2}%
+	}
+	\smallskip
+	\smallskip
+}
+\usepackage{autres}
+\usepackage{dialogues}
+\usepackage{mudoc}
+\usepackage{pdfpages,transparent,array,ltablex}
+\usepackage{color}
+
+\RequirePackage{needspace}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{keycommand,ifthen,calc}
+\RequirePackage{lettrine}
+\RequirePackage[autocompile]{gregoriotex}
+
+\newcommand{\vulgo}[1]{\noindent{\small #1\par}\smallskip\nopagebreak}
+

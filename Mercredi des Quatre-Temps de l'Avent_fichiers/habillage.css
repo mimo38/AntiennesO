@@ -1,0 +1,578 @@
+/*
+ * Fichier SPIP habillage.css + adaptation squelette Epona
+ * Les couleurs a personnaliser sont marques PERSO
+ */
+
+/* taille typo
+ * Base				100%
+ * -------------------------------------
+ * 20px				1.27em
+ * 19px				1.21em
+ * 18px				1.15em
+ * 17px				1.09em
+ * 16px				1.03em
+ * 15px				0.96em
+ * 14px				0.88em
+ * 13px				0.82em
+ * 12px				0.77em
+ * 11px				0.71em
+ * 10px				0.65em
+ *  9px				0.59em
+ * Attention : en dessous de 0.71em le texte devient illisible en text smallest sur MSIE
+ */
+
+/*  ------------------------------------------
+/*  Correction des styles HTML par defaut
+/*  ------------------------------------------ */
+body {
+	background: #FFFFE0;  /* PERSO */
+	margin: 1.5em;
+	font-size: 1em;
+	color: #333;
+}
+
+img, table { margin: 0; padding: 0; border: 0; }
+ul { list-style: none; }
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; font-size: 1em; font-weight: normal; }
+td {               /* PERSO */
+font-size : 80%;             
+font-family :  Verdana, Arial, Helvetica, Geneva, sans-serif; 
+color : black; 
+background-color : #FFFFE0;
+width:50%; 
+}
+
+/*  ------------------------------------------
+/*  Disposition a l'ecran des blocs principaux
+/*  ------------------------------------------ */
+
+/* colonne de gauche logo et navigation */
+#navigation {
+	position: absolute;
+	background-color: #6A019B; /* PERSO */
+	border-right: 4px solid #6A019B; /* PERSO vert1: 00cc33 vert2: 1AAD1E vert3: 127213 rouge FF0000 violet CC0099 violet foncé 6A019B violet foncé 7C407A violet passion 330033 blanc FFFFFF noir 000000 rose FF99FF*/
+	border-bottom: 4px solid #6A019B; /* PERSO vert: bab707 rouge FF0000 violet CC0099 blanc FFFFFF noir 000000 rose FF99FF doré ffc000*/
+	left: 0px;
+	top: 0px;
+	width: 165px;
+	padding: 0px;
+	margin: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+#principal {
+	position: absolute;
+	left: 200px;
+	top: 0px;
+	margin: 0px;
+	padding: 0px;
+	margin-right: 2em;
+	margin-top: 1.5em;
+	width: 75%;
+}
+
+#bandeau {
+	position: absolute;
+	top: 0px;
+	left: 165px;
+	height: 151px;
+	background-color: #7C407A; /* PERSO */
+	border-right: 4px solid #6A019B; /* PERSO vert: bab707 rouge FF0000 violet CC0099 blanc FFFFFF noir 000000 rose FF99FF*/
+	border-bottom: 4px solid #6A019B; /* PERSO vert: bab707 rouge FF0000 violet CC0099 blanc FFFFFF noir 000000 rose FF99FF*/
+	margin: 0px;
+	padding: 0px;
+}
+
+/* A utiliser a la place de principal pour pages a bandeau */
+#second {
+	position: absolute;
+	left: 180px;
+	top: 165px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* encart flottant pour partie droite */
+.encart {
+	float: right;
+	width: 13em;
+	margin-left: 4%;
+	margin-top: 1em;
+	margin-bottom: 0em;
+	margin-right: 0px;
+}
+
+/*  ------------------------------------------
+/*  Typographie generale du site
+/*  ------------------------------------------ */
+
+/* Typo pour les menus et la navigation */
+body, #navigation, .encart,.formulaire_spip {
+	font-family: Verdana, "Bitstream Vera Sans", Tahoma, Arial, sans-serif; }
+
+/* Typo pour le contenu */
+
+/* Typo pour les citations et extraits introductifs */
+q, blockquote, .liste-articles li .texte, h3.spip {
+	font-family: "Bitstream Vera Serif", Georgia, Times, serif; }
+
+
+/*  ------------------------------------------
+/*  Habillage des menus et de la navigation
+/*  ------------------------------------------ */
+
+/*  Habillage general des menus de navigation
+---------------------------------------------- */
+.rubriques, .breves, .syndic, .forums, .divers {
+	min-width: 10em;
+	border: 1px solid #CCC;
+	margin-bottom: 1em;
+	font-size: 0.77em;
+}
+
+.menu-titre {
+	padding: 0.2em 0.4em;
+	border-bottom: 1px dotted #CCC;
+	text-align: center;
+	font-weight: bold;
+}
+.menu {
+	margin: 5px;
+	margin-bottom: 16px;
+}
+.menu ul {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	padding-bottom: 4px;
+	list-style: none;
+}
+.menu-item {
+	margin: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	font-size: 90%;
+}
+
+.rubriques p, .breves p, .syndic p, .forums p, .divers p { margin: 0; padding: 0.2em 0.7em;  }
+.rubriques ul, .breves ul, .syndic ul, .forums ul, .divers ul { padding: 0.2em 0; }
+.rubriques li, .breves li, .syndic li, .forums li, .divers li { padding: 0 0.7em; }
+
+/*  Des couleurs specifiques selon les types de menus
+---------------------------------------------- */
+.rubriques { background: #EAFFEA;}
+.rubriques .menu-titre { background: #F2FFF2; }
+
+.breves { background: #FFFFE0; }
+.breves .menu-titre { background: #FFF2F2; }
+
+.syndic { background: #E8F8F8; }
+.syndic .menu-titre { background: #F0FCFC; }
+
+.forums { background: #EAEAFF; }
+.forums .menu-titre { background: #F2F2FF; }
+
+.divers { background: #F8F8E8; }
+.divers .menu-titre { background: #FCFCF0; }
+
+/*  ------------------------------------------
+/*  Habillage du contenu
+/*  ------------------------------------------ */
+
+.contenu {
+	margin: 15px;
+}
+.contenu .texte {
+	margin-right: 15px;
+}
+.contenu h2.titre-extrait {
+}
+.contenu h2.titre-texte {
+}
+.contenu .surtitre {
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+.contenu .detail {
+	margin-left: 2em;
+	font-size: 80%;
+	color: #303030;
+}
+.contenu .detail .important {
+	color: #a02020;
+}
+.contenu h1,h2 {           /* PERSO */
+	font-size: 105%;
+	font-weight: bold;
+}
+.contenu h1,h2.titre-extrait {      /* PERSO */
+	font-size: 120%;
+	font-weight: bold;
+}
+.contenu .surtitre {     /* PERSO */
+	font-size: 105%;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+.extrait {      /* PERSO */
+	border: groove 2px #a0a0a0;
+	padding: 1em;
+	font-size: 90%;
+}
+
+/*
+ * Habillage des forums
+ */
+
+ul.forum-total {
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+.forum-fil {
+	margin-top: 3em;
+}
+.forum-fil ul {
+	display: block;
+	margin: 0px;
+	margin-left: 2em;
+	padding: 0px;
+	list-style: none;
+}
+.forum-titre {
+	font-weight: bold;
+	font-size: 120%;
+}
+.forum-item {
+	margin: 0px;
+	padding: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0em;
+	text-align: justify;
+	color: #303030;
+	font-size: 80%;
+}
+.forum-repondre-message {
+	text-align: right;
+}
+
+/*  Cartouche et titraille
+---------------------------------------------- */
+.cartouche {
+	padding-top: 1em;
+	border-top: 2px solid #404040;
+	margin-bottom: 1em;
+}
+
+
+.cartouche .titre {
+	font-size: 1.27em;
+	font-weight: bold;
+	color: #000; }
+
+.cartouche .spip_logos {
+	float: right;
+	margin-left: 16px;
+	margin-bottom: 16px; }
+
+.cartouche p { margin: 0; padding: 0; clear: left; }
+.cartouche small { font-size: 0.71em; }
+
+
+/*  Mise en forme des textes du contenu
+---------------------------------------------- */
+.chapo {
+	margin-bottom: 1.5em;
+	font-weight: bold;
+	line-height: 1.4em; }
+
+.lien {
+	background: #EEE;
+	margin: 1em;
+	margin-bottom: 1.5em;
+	padding: 0.82em;
+	border: 1px solid #CCC;
+	font-size: 0.82em;
+	font-weight: bold; 
+	background-image: url(http://www.introibo.fr/squelettes/lien.gif)
+}
+
+.texte { color: #000; font-size: 0.80em; }
+
+.ps, .notes {
+	margin-top: 1.4em;
+	padding-top: 2px;
+	border-top: 2px solid #CCC; }
+.ps { font-size: 0.82em; }
+.notes { clear: both; font-size: 0.77em; }
+.ps h2, .notes h2 { font-size: 1.19em; font-weight: bold; }
+
+/* Listes d'articles et extraits introductifs
+----------------------------------------------- */
+.liste-articles li { margin-bottom: 1em; }
+
+.liste-articles li .titre {
+	font-size: 1.03em;
+	font-weight: bold; }
+
+.liste-articles li .spip_logos {
+	float: right;
+	margin-left: 16px;
+	margin-bottom: 16px;
+	clear: right; }
+
+.liste-articles li p { margin: 0; padding: 0; }
+
+.liste-articles li .enclosures {
+	float: right;
+	text-align: right;
+	max-width: 60%;
+	margin: 0; }
+
+.liste-articles li small {
+	display: block;
+	font-size: 0.71em; }
+
+.liste-articles li .texte {
+	margin-top: 5px;
+	margin-bottom: 2em;
+	border: 1px solid #CCC;
+	padding: 0.9em;
+	font-size: 0.82em;
+	line-height: 1.4em; }
+
+/*  ------------------------------------------
+/*  Habillage des formulaires
+/*  ------------------------------------------ */
+
+/* Correction des styles HTML par defaut */
+.formulaire_spip form, .formulaire_spip fieldset, .formulaire_spip legend, .formulaire_spip label, .formulaire_spip input, .formulaire_spip textarea, .formulaire_spip select, .formulaire_spip option { margin: 0; padding: 0; border: 0; background: none; }
+
+/* Styles des formulaires de Spip */
+.formulaire_spip {
+	text-align: left;
+	font-size: 0.77em;
+}
+
+.formulaire_spip p {
+	margin: 0.5em 0;
+	padding: 0; }
+
+.formulaire_spip fieldset {
+    display: block;
+	margin: 0.77em 0;
+	padding: 0.77em;
+	border: 1px dotted; }
+.formulaire_spip legend { 
+	font-weight: bold; 
+	padding: 3px;
+	background: #FFF; /* Sinon, superposition dans MSIE */
+}
+
+.formulaire_spip label {}
+.formulaire_spip .forml {
+	width: 99%;
+	padding: 1px;
+	border: 1px solid;
+	font-family: inherit;
+	font-size: inherit; }
+
+.spip_bouton { text-align: right; }
+.spip_bouton input {
+	margin: 3px 0;
+	padding: 1px 2px;
+	border: 2px outset;
+	font-weight: bold;
+	float: right; }
+
+/* Reponse du formulaire */
+.reponse_formulaire { font-weight: bold; color: #F00; }
+fieldset.reponse_formulaire { border: 1px dotted; font-weight: normal; }
+
+/* Previsualisation du message */
+fieldset.previsu {
+	padding: 1em;
+	border: 1px solid; }
+
+/* Formulaire de login au forum */
+.formulaire_login_forum .forml { width: 12em; }
+.formulaire_login_forum .spip_logos { float: right; padding-left: 10px; }
+
+/* Choix des mots-clefs */
+.choix_mots { width: 47%; float: left; } 
+.choix_mots label { display: inline; }
+
+/* Formulaire de recherche */
+.formulaire_recherche { text-align: left; width: 12em; }
+.formulaire_recherche label { display: none; }
+
+/*  ------------------------------------------
+/*  Habillage des forums
+/*  ------------------------------------------ */
+
+.forum-repondre, .forum-decompte {
+	clear: both;
+	margin-top: 2.5em;
+	padding-top: 2px;
+	border-top: 2px solid #CCC;
+	font-size: 0.88em;
+	font-weight: bold; }
+
+/* * Habillage des forums */
+ul.forum { display: block; clear: both; margin: 0; padding: 0; }
+.forum-fil { margin-top: 1.5em; }
+.forum-fil ul { display: block; margin: 0; padding: 0; margin-left: 1em; }
+.forum-chapo .forum-titre, .forum-chapo .forum-titre a { display: block; margin: 0; padding: 0; font-weight: bold; text-decoration: none; color: #333; }
+.forum-chapo small {}
+.forum-texte { margin: 0; padding: 0.5em 1em 0 1em; color: #333; font-size: 0.82em; }
+.forum-texte .forum-lien {}
+.forum-texte .forum-repondre-message { margin: 0; padding: 1px 0; text-align: right; }
+
+/* Boite d'un forum : eclaircissement progressif des bords */
+ul .forum-message { border: 1px solid #666; margin: 0; padding: 0; margin-bottom: 1em; }
+ul ul .forum-message { border: 1px solid #A4A4A4; }
+ul ul ul .forum-message { border: 1px solid #B8B8B8; }
+ul ul ul ul .forum-message { border: 1px solid #CCC; }
+ul ul ul ul ul .forum-message { border: 1px solid #E0E0E0; }
+ul ul ul ul ul ul .forum-message { border: 1px dotted #E0E0E0; }
+
+/* Boite de titre d'un forum : mise en couleur selon la profondeur du forum */
+ul .forum-chapo { border: 0; border-bottom: 1px dotted #B8B8B8; margin: 0; padding: 3px 6px 2px 6px; font-size: 0.88em; background: #C4E0E0; }
+ul ul .forum-chapo { background: #D4E8E8; }
+ul ul ul .forum-chapo { background: #E4F0F0; }
+ul ul ul ul .forum-chapo { background: #F4F8F8; border-bottom: 1px dotted #E0E0E0; }
+ul ul ul ul ul .forum-chapo { background: #FFF; }
+
+/*  ------------------------------------------
+/*  Couleurs des liens
+/*  ------------------------------------------ */
+a { text-decoration: none; color: #5a5e6b; 
+		} /* PERSO */
+a.spip_in { text-decoration: none; 
+		color: #5a5e6b; 
+		} /* PERSO */
+a:hover { 	text-decoration: underline; 
+		color: red; 
+		background-image: url(lien.gif);
+  		background-repeat: no-repeat;
+  		background-position: center right;
+  		padding-right: 18px;
+} /* PERSO - survol */
+
+/* Partie texte du logo */
+.info {
+	font-size: 9px;
+	text-align:center;
+	padding: 5px;
+	margin: 5px;
+}
+
+/* Pagination */
+.page {
+	text-align: center;
+	margin: 1em;
+	border: 1px solid #a0a0a0;
+	padding: 0.5em;
+}
+
+.reponse {
+	text-align: right;
+	margin-right: 1em;
+	font-size: 90%
+}
+
+.reponse a, .reponse a:link {
+	color: #cc4f4f; /* PERSO */
+	
+}
+
+/* pour le formulaire recherche */
+.formulaire {
+	color: black;
+	margin: 8px;
+	margin-bottom: 16px;
+	padding: 4px;
+	border: 1px solid #a0a0a0;
+	background-color: #f6f6f6;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	font-weight: normal;
+}
+
+/*
+ * Le menu de navigation
+ */
+ul#menu li ul{
+  display:none; 
+}
+
+ul#menu li:hover>ul{
+  display:block; 
+}
+
+ul#menu {
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     font-size: 11px;
+     color:#ffffff;
+}
+
+ul#menu, ul#menu ul {
+border:solid 1px #000000;
+  list-style:none;
+  padding:0;
+  margin:0;
+  width:13em;
+  _width:13em;
+   background-color:#cc4f4f; /* PERSO */
+  color:#ffffff;
+}
+	 
+ul#menu ul{
+  position:absolute;
+  top:-5px;
+  left:12.5em;
+}
+
+ul#menu li{
+  position:relative;
+  margin:0px;
+  padding:0px;
+  _display:inline;
+}
+
+ul#menu a{
+  display:block;
+  width: 13em;
+  text-decoration: none;
+  text-indent: 1em;
+  padding: 5px 0;
+}
+
+ul#menu li:hover, ul#menu li a:hover {
+  color:#000000;
+  background-color:#a04f4f; /* PERSO */
+}
+
+ul#menu li.smenu {
+	background-image: url(arrow.gif) !important;
+	background-position: 11.4em;
+	background-repeat: no-repeat;
+}
+
+ul#menu li.smenu:hover, ul#menu li.smenu>a:hover {
+	background-image: url(arrowb.gif) !important;
+	background-position: 11.4em;
+	background-repeat: no-repeat;
+  background-color:#a04f4f; /* PERSO */
+}
+
+ul#menu a {
+    color:#ffffff;
+    text-decoration: none;
+}
+

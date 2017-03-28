@@ -18,14 +18,12 @@ fontsize=10%
 \definecolor{rubrum}{rgb}{.6,0,0}
 \def\rubrum{\color{rubrum}}%%%%%%%mettre"\def\rubrum{\color{rubrum}}" pour avoir le texte adéquat en rouge
 \def\nigra{\color{black}}
-    %\redlines %%%avtiver ce paramètre pour rendre rouge les lignes de partition
-    \gresetlinecolor{gregoriocolor}
+    \gresetlinecolor{gregoriocolor}%%%activer ce paramètre pour rendre rouge les lignes de partition
    \definecolor{gregoriocolor}{rgb}{.6,0,0}
 %
 \let\red\rubrum
     \newfontfamily\lettrines[Scale=1.9]{LettrinesPro800}
     \def\gretextformat#1{{\fontsize{\taillepolice}{\taillepolice}\selectfont #1}}
-    \def\greinitialformat#1{{\lettrines #1}}
     \grechangestyle{initial}{\lettrines}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
